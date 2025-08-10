@@ -1,16 +1,14 @@
-const express = require('express');
-const path = require('path');
-const app = express();
+const http = require('http');
+
+const hostname = '127.0.0.1';
 const port = 3000;
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-// API endpoint to return "Hello World!"
-app.get('/hello', (req, res) => {
-  res.send('Hello World!');
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World from Server!');
 });
 
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
