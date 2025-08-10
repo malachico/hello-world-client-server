@@ -1,37 +1,20 @@
-# Hello World Client-Server Application
+# Hello World Client Server
 
-This is a simple "Hello World" application demonstrating a basic client-server architecture.
+This is the README file for the Hello World client-server application.
 
-## Architecture Overview
+## Description
 
-*   **Frontend (Client):** A simple HTML page (`public/index.html`) that uses JavaScript to fetch the "Hello World!" message from the backend.
-*   **Backend (Server):** A Node.js Express application (`server.js`) that serves static frontend files and exposes a `/hello` API endpoint to deliver the "Hello World!" message.
+This application demonstrates a simple client-server architecture with a Hello World example.
 
-## Technology Stack
+## Usage
 
-*   **Frontend:** HTML, CSS, JavaScript
-*   **Backend:** Node.js, Express.js
+Instructions on how to run the client and server components.
 
-## How to Run
+## Files
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/malachico/hello-world-client-server.git
-    cd hello-world-client-server
-    ```
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-3.  **Start the server:**
-    ```bash
-    npm start
-    ```
-4.  **Access the application:**
-    Open your web browser and navigate to `http://localhost:3000`.
+- client.js: Client-side code
+- server.js: Server-side code
 
-You should see "Hello World!" displayed in your browser.
+## License
 
-## API Endpoints
-
-*   `GET /hello`: Returns the "Hello World!" string.
+MIT License
