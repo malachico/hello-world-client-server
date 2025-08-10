@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Client</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        #apiResponse {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>This is the client-side application.</p>
+    <button onclick="fetchApiData()">Fetch Server Data</button>
+    <div id="apiResponse"></div>
+
+    <script>
+        async function fetchApiData() {
+            const responseDiv = document.getElementById('apiResponse');
+            responseDiv.textContent = 'Fetching data...';
+            try {
+                const response = await fetch('/api/hello');
+                const data = await response.json();
+                responseDiv.textContent = `Server says: ${data.message}`;
+            } catch (error) {
+                responseDiv.textContent = `Error fetching data: ${error.message}`;
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>
