@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello World Client</title>
+</head>
+<body>
+  <h1>Hello World Client</h1>
+  <button onclick="fetchMessage()">Get Message from Server</button>
+  <p id="message"></p>
+
+  <script>
+    function fetchMessage() {
+      fetch('http://127.0.0.1:3000')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('message').textContent = data;
+        })
+        .catch(error => {
+          document.getElementById('message').textContent = 'Error fetching message';
+        });
+    }
+  </script>
+</body>
+</html>
